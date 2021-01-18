@@ -8,8 +8,8 @@ import glob
 import pandas as pd
 
 
-def loop_over_files():
-    files = glob.glob('data/*.csv')
+def loop_over_files(directory=None):
+    files = glob.glob(f'{directory}/*.csv')
 
     fuelups = []
     services = []
@@ -18,24 +18,23 @@ def loop_over_files():
     for filename in files:
         print('Reading ' + filename)
         if 'fuelups' in filename:
-            # fuelups.append(transform_fuelups(filename))
+            fuelups.append(transform_fuelups(filename))
             cars.append(transform_car_data(filename))
         elif 'services' in filename:
-            # services.append(transform_services(filename))
-            pass
+            services.append(transform_services(filename))
 
-    if fuelups:
+    if len(fuelups) > 0:
         fuelups_all = pd.concat(fuelups)
-        fuelups_all.to_csv('transformed/fuelups.csv', index=False)
+        fuelups_all.to_csv(f'{directory}/transformed/fuelups.csv', index=False)
 
-    if services:
+    if len(services) > 0:
         service_all = pd.concat(services)
-        service_all.to_csv('transformed/other_cost.csv', index=False)
+        service_all.to_csv(f'{directory}/transformed/other_cost.csv',
+                           index=False)
 
-    if cars:
+    if len(cars) > 0:
         cars_all = pd.concat(cars)
-        cars_all.to_csv('transformed/car.csv', index=False)
-        print('Wrote file to tramsformed/car.csv')
+        cars_all.to_csv(f'{directory}/transformed/car.csv', index=False)
 
 
 def transform_fuelups(filename: str) -> pd.DataFrame:
@@ -75,7 +74,7 @@ def transform_fuelups(filename: str) -> pd.DataFrame:
     return new
 
     # Save without the pandas index column
-    new.to_csv('transformed/refueling.csv', index=False)
+    # new.to_csv('transformed/refueling.csv', index=False)
 
 
 def transform_services(filename: str) -> pd.DataFrame:
@@ -112,6 +111,7 @@ def transform_services(filename: str) -> pd.DataFrame:
     new['car_id'] = 1
 
     new = new[car_report_cols]
+    return new
 
 
 def transform_car_data(filename: str) -> pd.DataFrame:

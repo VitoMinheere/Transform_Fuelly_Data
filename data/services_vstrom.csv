@@ -1,0 +1,7 @@
+car_name, model, odometer, price, service_date, date_added, tags, service_type, sub_service_types, notes, latitude, longitude
+"V-strom 2012","Suzuki DL650A V-Strom ABS",73123.0,2.00,2020-12-22,2020-12-22 13:52:37,"","service","car_wash","",,
+"V-strom 2012","Suzuki DL650A V-Strom ABS",72846.0,1.00,2020-12-06,2020-12-06 16:15:55,"","service","car_wash","",,
+"V-strom 2012","Suzuki DL650A V-Strom ABS",72700.0,222.00,2020-12-06,2020-12-06 16:17:57,"","service","tire_a,tire_b","",,
+"V-strom 2012","Suzuki DL650A V-Strom ABS",71024.0,78.00,2020-09-10,2020-09-10 07:37:16,"","service","battery","",,
+"V-strom 2012","Suzuki DL650A V-Strom ABS",66840.0,12.00,2020-07-29,2020-07-29 20:11:53,"","service","engine_oil","",,
+"V-strom 2012","Suzuki DL650A V-Strom ABS",65607.0,5000.00,2020-07-17,2020-07-17 16:06:49,"","bought","","",,

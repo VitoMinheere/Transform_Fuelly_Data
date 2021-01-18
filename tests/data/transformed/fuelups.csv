@@ -1,0 +1,4 @@
+_id,date,mileage,volume,price,partial,note,fuel_type_id,car_id
+1,2021-01-02,168529.0,28.16,42.493,FALSE,,1,1
+2,2020-12-26,167994.0,21.191,31.765,FALSE,,1,1
+3,2020-12-16,167538.0,25.358,38.265,FALSE,,1,1
